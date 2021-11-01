@@ -19,3 +19,6 @@ export { default as VideoMenu } from './VideoMenu';
 export { default as RemoteVideoMenuTriggerButton } from './RemoteVideoMenuTriggerButton';
 export { default as LocalVideoMenuTriggerButton } from './LocalVideoMenuTriggerButton';
 export { default as VolumeSlider } from './VolumeSlider';
+//XX - Unmute
+export { default as UnMuteButton } from './UnMuteButton';
+export { default as UnMuteRemoteParticipantDialog } from './UnMuteRemoteParticipantDialog';

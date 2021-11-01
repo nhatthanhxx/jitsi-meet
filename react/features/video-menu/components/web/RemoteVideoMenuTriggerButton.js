@@ -23,6 +23,7 @@ import { REMOTE_CONTROL_MENU_STATES } from './RemoteControlButton';
 import {
     GrantModeratorButton,
     MuteButton,
+    UnMuteButton,
     MuteVideoButton,
     KickButton,
     PrivateMessageMenuButton,
@@ -49,6 +50,12 @@ type Props = {
      */
     _disableRemoteMute: Boolean,
 
+    /**
+     * Whether or not the participant is currently muted.
+     */
+    _isAudioMuted: boolean,
+
+    //XX - Unmute
     /**
      * Whether or not to display the grant moderator button.
      */
@@ -242,6 +249,7 @@ class RemoteVideoMenuTriggerButton extends Component<Props> {
             _disableKick,
             _disableRemoteMute,
             _disableGrantModerator,
+            _isAudioMuted,
             _isModerator,
             dispatch,
             initialVolumeValue,
@@ -256,6 +264,8 @@ class RemoteVideoMenuTriggerButton extends Component<Props> {
             if (!_disableRemoteMute) {
                 buttons.push(
                     <MuteButton
+                        //XX - Unmute
+                        isAudioMuted = { _isAudioMuted }
                         key = 'mute'
                         participantID = { participantID } />
                 );
@@ -272,6 +282,13 @@ class RemoteVideoMenuTriggerButton extends Component<Props> {
                 buttons.push(
                     <MuteEveryoneElsesVideoButton
                         key = 'mute-others-video'
+                        participantID = { participantID } />
+                );
+                //XX - Unmute
+                buttons.push(
+                    <UnMuteButton
+                        isAudioMuted = { _isAudioMuted }
+                        key = 'unmute'
                         participantID = { participantID } />
                 );
             }

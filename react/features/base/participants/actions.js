@@ -9,6 +9,7 @@ import {
     KICK_PARTICIPANT,
     LOCAL_PARTICIPANT_RAISE_HAND,
     MUTE_REMOTE_PARTICIPANT,
+    UNMUTE_REMOTE_PARTICIPANT,
     PARTICIPANT_ID_CHANGED,
     PARTICIPANT_JOINED,
     PARTICIPANT_KICKED,
@@ -208,6 +209,14 @@ export function localParticipantRoleChanged(role) {
 export function muteRemoteParticipant(id, mediaType) {
     return {
         type: MUTE_REMOTE_PARTICIPANT,
+        id,
+        mediaType
+    };
+}
+// mute-unmute-XX
+export function unmuteRemoteParticipant(id, mediaType) {
+    return {
+        type: UNMUTE_REMOTE_PARTICIPANT,
         id,
         mediaType
     };

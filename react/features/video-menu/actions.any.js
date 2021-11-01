@@ -21,7 +21,8 @@ import {
 import {
     getLocalParticipant,
     getRemoteParticipants,
-    muteRemoteParticipant
+    muteRemoteParticipant,
+    unmuteRemoteParticipant
 } from '../base/participants';
 
 declare var APP: Object;
@@ -78,6 +79,18 @@ export function muteRemote(participantId: string, mediaType: MEDIA_TYPE) {
         }
         sendAnalytics(createRemoteMuteConfirmedEvent(participantId, mediaType));
         dispatch(muteRemoteParticipant(participantId, mediaType));
+    };
+}
+//XX - Unmute
+export function unmuteRemote(participantId: string, mediaType: MEDIA_TYPE) {
+    return (dispatch: Dispatch<any>) => {
+        if (mediaType !== MEDIA_TYPE.AUDIO && mediaType !== MEDIA_TYPE.VIDEO) {
+            logger.error(`Unsupported media type: ${mediaType}`);
+
+            return;
+        }
+        sendAnalytics(createRemoteMuteConfirmedEvent(participantId, mediaType));
+        dispatch(unmuteRemoteParticipant(participantId, mediaType));
     };
 }
 
