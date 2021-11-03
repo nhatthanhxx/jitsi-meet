@@ -5,7 +5,7 @@ import React from 'react';
 import { translate } from '../../../base/i18n';
 import { IconMicrophone } from '../../../base/icons';
 import { connect } from '../../../base/redux';
-import AbstractMuteButton, {
+import AbstractUnMuteButton, {
     _mapStateToProps,
     type Props
 } from '../AbstractUnMuteButton';
@@ -22,7 +22,7 @@ import VideoMenuButton from './VideoMenuButton';
  * for the sake of code sharing between web and mobile. Once web uses the
  * {@code AbstractButton} base component, this can be fully removed.
  */
-class UnMuteButton extends AbstractMuteButton {
+class UnMuteButton extends AbstractUnMuteButton {
     /**
      * Instantiates a new {@code Component}.
      *
