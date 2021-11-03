@@ -61,7 +61,7 @@ function onLoad() {
         }
     }
 
-    insertTextMsg('hintMessage', getHint());
+    // insertTextMsg('hintMessage', getHint());
 }
 
 window.onload = onLoad;
