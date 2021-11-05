@@ -269,6 +269,13 @@ class RemoteVideoMenuTriggerButton extends Component<Props> {
                         key = 'mute'
                         participantID = { participantID } />
                 );
+                //XX - Unmute
+                buttons.push(
+                    <UnMuteButton
+                        isAudioMuted = { _isAudioMuted }
+                        key = 'unmute'
+                        participantID = { participantID } />
+                );
                 buttons.push(
                     <MuteEveryoneElseButton
                         key = 'mute-others'
@@ -282,13 +289,6 @@ class RemoteVideoMenuTriggerButton extends Component<Props> {
                 buttons.push(
                     <MuteEveryoneElsesVideoButton
                         key = 'mute-others-video'
-                        participantID = { participantID } />
-                );
-                //XX - Unmute
-                buttons.push(
-                    <UnMuteButton
-                        isAudioMuted = { _isAudioMuted }
-                        key = 'unmute'
                         participantID = { participantID } />
                 );
             }

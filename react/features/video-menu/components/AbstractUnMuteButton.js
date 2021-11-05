@@ -43,8 +43,8 @@ export type Props = AbstractButtonProps & {
 export default class AbstractUnMuteButton extends AbstractButton<Props, *> {
     accessibilityLabel = 'toolbar.accessibilityLabel.remoteMute';
     icon = IconMicrophone;
-    label = 'videothumbnail.domute';
-    toggledLabel = 'videothumbnail.muted';
+    label = 'videothumbnail.dounmute';
+    toggledLabel = 'videothumbnail.unmuted';
 
     /**
      * Handles clicking / pressing the button, and mutes the participant.

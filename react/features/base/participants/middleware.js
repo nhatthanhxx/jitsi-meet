@@ -148,7 +148,7 @@ MiddlewareRegistry.register(store => next => action => {
     case UNMUTE_REMOTE_PARTICIPANT: {
         const { conference } = store.getState()['features/base/conference'];
 
-        conference.unMuteParticipant(action.id, action.mediaType);
+        conference.unmuteParticipant(action.id, action.mediaType);
         break;
     }
 
